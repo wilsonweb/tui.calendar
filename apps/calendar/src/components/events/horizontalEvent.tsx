@@ -54,7 +54,7 @@ function getEventItemStyle({
   calendarColor: CalendarColor;
 }) {
   const { exceedLeft, exceedRight } = uiModel;
-  const { color, backgroundColor, dragBackgroundColor, borderColor } = getEventColors(
+  const { color, backgroundColor, dragBackgroundColor, borderColor,overflow } = getEventColors(
     uiModel,
     calendarColor
   );
@@ -64,7 +64,7 @@ function getEventItemStyle({
     backgroundColor: isDraggingTarget ? dragBackgroundColor : backgroundColor,
     borderLeft: exceedLeft ? 'none' : `3px solid ${borderColor}`,
     borderRadius: getBorderRadius(exceedLeft, exceedRight),
-    overflow: 'hidden',
+    overflow: overflow??'hidden',
     height: eventHeight,
     lineHeight: toPx(eventHeight),
     opacity: isDraggingTarget ? 0.5 : 1,

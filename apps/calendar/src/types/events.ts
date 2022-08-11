@@ -40,7 +40,7 @@ export type EventState = 'Busy' | 'Free';
 
 export type EventObjectWithDefaultValues = MarkOptional<
   Required<EventObject>,
-  'color' | 'borderColor' | 'backgroundColor' | 'dragBackgroundColor'
+  'color' | 'borderColor' | 'backgroundColor' | 'dragBackgroundColor' | 'overflow'
 > & {
   start: TZDate;
   end: TZDate;
@@ -162,6 +162,11 @@ export interface EventObject {
    * Background color of the dragging event element
    */
   dragBackgroundColor?: string;
+
+  /**
+   * Overflow of the event element
+   */
+  overflow?: string;
 
   /**
    * Left border color of the event element

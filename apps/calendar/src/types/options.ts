@@ -62,6 +62,7 @@ export interface CalendarColor {
   color?: string;
   backgroundColor?: string;
   dragBackgroundColor?: string;
+  overflow?: string;
   borderColor?: string;
 }
 

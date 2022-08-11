@@ -94,6 +94,7 @@ export function createCalendarDispatchers(set: SetState<CalendarStore>): Calenda
               event.borderColor = colorOptions.borderColor ?? event.borderColor;
               event.dragBackgroundColor =
                 colorOptions.dragBackgroundColor ?? event.dragBackgroundColor;
+              event.overflow= colorOptions.overflow ?? event.overflow;
             }
 
             return event;

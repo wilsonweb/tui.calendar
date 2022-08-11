@@ -60,6 +60,8 @@ export default class EventModel implements Omit<EventObjectWithDefaultValues, '_
 
   dragBackgroundColor?: string;
 
+  overflow?: string;
+
   borderColor?: string;
 
   customStyle = {};
@@ -107,6 +109,7 @@ export default class EventModel implements Omit<EventObjectWithDefaultValues, '_
     color,
     backgroundColor,
     dragBackgroundColor,
+    overflow,
     borderColor,
     customStyle = {},
     raw = null,
@@ -132,6 +135,7 @@ export default class EventModel implements Omit<EventObjectWithDefaultValues, '_
     this.color = color;
     this.backgroundColor = backgroundColor;
     this.dragBackgroundColor = dragBackgroundColor;
+    this.overflow = overflow;
     this.borderColor = borderColor;
     this.customStyle = customStyle;
     this.raw = raw;
@@ -246,6 +250,10 @@ export default class EventModel implements Omit<EventObjectWithDefaultValues, '_
       return false;
     }
 
+    if (this.overflow !== event.overflow) {
+      return false;
+    }
+
     if (this.borderColor !== event.borderColor) {
       return false;
     }
@@ -335,6 +343,7 @@ export default class EventModel implements Omit<EventObjectWithDefaultValues, '_
       color: this.color,
       backgroundColor: this.backgroundColor,
       dragBackgroundColor: this.dragBackgroundColor,
+      overflow: this.overflow,
       borderColor: this.borderColor,
     };
   }
